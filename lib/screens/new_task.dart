@@ -88,7 +88,7 @@ class NewTaskState extends State {
                             _validate = true;
                           });
                         } else {
-                          Provider.of<TaskProvider>(context).addToTask(
+                          Provider.of<TaskProvider>(context , listen: false).addToTask(
                               _titleController.text,
                               _descriptionController.text);
                           Navigator.of(context).pushReplacement(

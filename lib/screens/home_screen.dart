@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:todo/providers/task_provider.dart';
+import 'package:todo/screens/new_task.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -78,8 +79,8 @@ class _HomePageState extends State {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(onPressed: (){
-        Provider.of<TaskProvider>(context , listen: false).addToTask('title', 'description');
+      floatingActionButton: FloatingActionButton(backgroundColor:Colors.lightBlue[900] ,child: Text('+' , style: TextStyle(fontSize: 24),),onPressed: (){
+       Navigator.push(context, MaterialPageRoute(builder: (context) => NewTaskScreen()));
       }),
     );
   }
